@@ -42,7 +42,6 @@ public class ProductService implements IProductService {
 
 	@Override
 	public Mono<Void> deleteById(ObjectId id) {
-		// TODO Auto-generated method stub
 		return productRepository.deleteById(id);
 	}
 }
