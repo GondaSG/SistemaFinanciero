@@ -1,5 +1,6 @@
 package com.bootcamp.sistemabancario.service;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,26 +22,23 @@ public class DocumentTypeService implements IDocumentTypeService{
 	}
 
 	@Override
-	public Mono<DocumentType> findById(String id) { 
+	public Mono<DocumentType> findById(ObjectId id) { 
 		return documentTypeRepository.findById(id);
 	}
 
 	@Override
 	public Mono<DocumentType> save(DocumentType documentType) {
-		// TODO Auto-generated method stub
-		return null;
+		return documentTypeRepository.save(documentType);
 	}
 
 	@Override
 	public Mono<DocumentType> update(DocumentType documentType) {
-		// TODO Auto-generated method stub
-		return null;
+		return documentTypeRepository.save(documentType);
 	}
 
 	@Override
-	public Mono<Void> deleteById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Mono<Void> deleteById(ObjectId id) {
+		return documentTypeRepository.deleteById(id);
 	}
 
 }

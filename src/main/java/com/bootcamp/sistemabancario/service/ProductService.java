@@ -1,40 +1,48 @@
 package com.bootcamp.sistemabancario.service;
 
-import com.bootcamp.sistemabancario.domain.Product;
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.bootcamp.sistemabancario.domain.OperationType;
+import com.bootcamp.sistemabancario.domain.Product;
+import com.bootcamp.sistemabancario.repository.IOperationTypeRepository;
+import com.bootcamp.sistemabancario.repository.IProductRepository;
+
+import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+@Service
+@RequiredArgsConstructor
 public class ProductService implements IProductService {
 
+	@Autowired
+	private final IProductRepository productRepository;
+	
 	@Override
 	public Flux<Product> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return productRepository.findAll();
 	}
 
 	@Override
-	public Mono<Product> findById(String id) {
-		// TODO Auto-generated method stub
-		return null;
+	public Mono<Product> findById(ObjectId id) { 
+		return productRepository.findById(id);
 	}
 
 	@Override
 	public Mono<Product> save(Product product) {
-		// TODO Auto-generated method stub
-		return null;
+		return productRepository.save(product);
 	}
 
 	@Override
 	public Mono<Product> update(Product product) {
-		// TODO Auto-generated method stub
-		return null;
+		return productRepository.save(product);
 	}
 
 	@Override
-	public Mono<Void> deleteById(String id) {
+	public Mono<Void> deleteById(ObjectId id) {
 		// TODO Auto-generated method stub
-		return null;
+		return productRepository.deleteById(id);
 	}
-
 }

@@ -12,14 +12,4 @@ import reactor.core.publisher.Mono;
 
 
 public interface IProductRepository extends ReactiveCrudRepository<Product,ObjectId> {
-	
-	  Flux<Product> findById(String id);
-	
-	  Flux<Product> findAll();
-	  
-	  Mono<Product> insert(Product product);
-	  
-	  Mono<Product> findAll(Product product);
-	  
-	  void deleteById(String id);
 }

@@ -1,5 +1,6 @@
 package com.bootcamp.sistemabancario.controller;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +18,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/afiliados")
+@RequestMapping("/tipoDocumento")
 public class DocumentTypeController {
 
     @Autowired
@@ -29,7 +30,7 @@ public class DocumentTypeController {
     }
 
     @GetMapping("/{id}")
-    public Mono<DocumentType> getById(@PathVariable("id") String id){
+    public Mono<DocumentType> getById(@PathVariable("id") ObjectId id){
         return  repo.findById(id);
     }
 
@@ -44,7 +45,7 @@ public class DocumentTypeController {
     }
 
     @DeleteMapping
-    public Mono<Void> eliminar(@PathVariable("id") String id){
+    public Mono<Void> eliminar(@PathVariable("id") ObjectId id){
         return repo.deleteById(id);
     }
 }

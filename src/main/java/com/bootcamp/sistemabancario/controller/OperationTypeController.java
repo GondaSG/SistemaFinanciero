@@ -1,4 +1,5 @@
 package com.bootcamp.sistemabancario.controller;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +16,7 @@ import com.bootcamp.sistemabancario.service.IOperationTypeService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 @RestController
-@RequestMapping("/afiliados")
+@RequestMapping("/tipoOperador")
 public class OperationTypeController {
     @Autowired
     private IOperationTypeService repo;
@@ -26,7 +27,7 @@ public class OperationTypeController {
     }
 
     @GetMapping("/{id}")
-    public Mono<OperationType> getById(@PathVariable("id") String id){
+    public Mono<OperationType> getById(@PathVariable("id") ObjectId id){
         return  repo.findById(id);
     }
 
@@ -41,7 +42,7 @@ public class OperationTypeController {
     }
 
     @DeleteMapping
-    public Mono<Void> eliminar(@PathVariable("id") String id){
+    public Mono<Void> eliminar(@PathVariable("id") ObjectId id){
         return repo.deleteById(id);
     }
 }
