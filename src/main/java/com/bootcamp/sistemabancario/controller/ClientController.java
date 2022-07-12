@@ -1,4 +1,7 @@
 package com.bootcamp.sistemabancario.controller;
+import com.bootcamp.sistemabancario.service.IAccountTypeService;
+import com.bootcamp.sistemabancario.service.IClientService;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,30 +19,31 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/cliente")
 public class ClientController {
     @Autowired
-    private ClientController cliente;
+    private IClientService iClientService;
+
 
     @GetMapping
-    public Flux<Client> listar(){
-        return cliente.findAll();
+    public Flux<Client> findall(){
+        return iClientService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Mono<Client> getById(@PathVariable("id") String id){
-        return  cliente.findById(id);
+    public Mono<Client> getById(@PathVariable("id") ObjectId id){
+        return  iClientService.findById(id);
     }
 
     @PostMapping
-    public Mono<Client> registrar(@RequestBody Client client){
-        return cliente.save(cliente);
+    public Mono<Client> register(@RequestBody Client client){
+        return iClientService.save(client);
     }
 
     @PutMapping
-    public Mono<Client> modificar(@RequestBody Client product){
-        return cliente.update(product);
+    public Mono<Client> update(@RequestBody Client product){
+        return iClientService.update(product);
     }
 
     @DeleteMapping
-    public Mono<Void> eliminar(@PathVariable("id") String id){
-        return cliente.deleteById(id);
+    public Mono<Void> delete(@PathVariable("id") ObjectId id){
+        return iClientService.deleteById(id);
     }
 }

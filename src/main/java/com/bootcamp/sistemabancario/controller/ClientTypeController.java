@@ -1,4 +1,6 @@
 package com.bootcamp.sistemabancario.controller;
+import com.bootcamp.sistemabancario.service.ClientTypeService;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,29 +19,29 @@ import reactor.core.publisher.Mono;
 public class ClientTypeController {
 
     @Autowired
-    private ClientTypeController cliente;
+    private ClientTypeService clientTypeService;
 
     @GetMapping
     public Flux<ClientType> listar(){
-        return cliente.findAll();
+        return clientTypeService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Mono<ClientType> getById(@PathVariable("id") String id){return  cliente.findById(id);
+    public Mono<ClientType> getById(@PathVariable("id") ObjectId id){return  clientTypeService.findById(id);
     }
 
     @PostMapping
-    public Mono<ClientType> registrar(@RequestBody ClientType cliente){
-        return cliente.save(cliente);
+    public Mono<ClientType> register(@RequestBody ClientType clientType){
+        return clientTypeService.save(clientType);
     }
 
     @PutMapping
-    public Mono<ClientType> modificar(@RequestBody ClientType cliente){
-        return cliente.update(cliente);
+    public Mono<ClientType> update(@RequestBody ClientType clientType){
+        return clientTypeService.update(clientType);
     }
 
     @DeleteMapping
-    public Mono<Void> eliminar(@PathVariable("id") String id){
-        return cliente.deleteById(id);
+    public Mono<Void> delete(@PathVariable("id") ObjectId id){
+        return clientTypeService.deleteById(id);
     }
 }
