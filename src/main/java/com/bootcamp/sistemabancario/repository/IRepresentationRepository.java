@@ -9,13 +9,4 @@ import reactor.core.publisher.Mono;
 
 public interface IRepresentationRepository extends ReactiveCrudRepository<Representation, ObjectId> {
 
-    Mono<Representation> findById(String id);
-
-    Flux<Representation> findAll();
-
-    Mono<Representation> create(Representation representation);
-
-    Mono<Representation> update(Representation representation);
-
-    Mono<Void> deleteById(String id);
 }

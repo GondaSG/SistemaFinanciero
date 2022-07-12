@@ -8,13 +8,4 @@ import reactor.core.publisher.Mono;
 
 public interface ITransactionRecordRepository extends ReactiveCrudRepository<TransactionRecord, ObjectId> {
 
-    Mono<TransactionRecord> findById(String id);
-
-    Flux<TransactionRecord> findAll();
-
-    Mono<TransactionRecord> create(TransactionRecord transactionRecord);
-
-    Mono<TransactionRecord> update(TransactionRecord transactionRecord);
-
-    Mono<Void> deleteById(String id);
 }
