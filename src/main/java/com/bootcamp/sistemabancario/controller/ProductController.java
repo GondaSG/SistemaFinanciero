@@ -20,30 +20,30 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/producto")
 public class ProductController {
     @Autowired
-    private IProductService repo;
+    private IProductService iProductService;
 
     @GetMapping
-    public Flux<Product> listar(){
-        return repo.findAll();
+    public Flux<Product> getAll(){
+        return iProductService.findAll();
     }
 
     @GetMapping("/{id}")
     public Mono<Product> getById(@PathVariable("id") ObjectId id){
-        return  repo.findById(id);
+        return  iProductService.findById(id);
     }
 
     @PostMapping
-    public Mono<Product> registrar(@RequestBody Product product){
-        return repo.save(product);
+    public Mono<Product> create(@RequestBody Product product){
+        return iProductService.save(product);
     }
 
     @PutMapping
-    public Mono<Product> modificar(@RequestBody Product product){
-        return repo.update(product);
+    public Mono<Product> update(@RequestBody Product product){
+        return iProductService.update(product);
     }
 
     @DeleteMapping
-    public Mono<Void> eliminar(@PathVariable("id") ObjectId id){
-        return repo.deleteById(id);
+    public Mono<Void> deleteById(@PathVariable("id") ObjectId id){
+        return iProductService.deleteById(id);
     }
 }

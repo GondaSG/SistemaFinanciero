@@ -22,30 +22,30 @@ import reactor.core.publisher.Mono;
 public class DocumentTypeController {
 
     @Autowired
-    private IDocumentTypeService repo;
+    private IDocumentTypeService iDocumentTypeService;
 
     @GetMapping
-    public Flux<DocumentType> listar(){
-        return repo.findAll();
+    public Flux<DocumentType> getAll(){
+        return iDocumentTypeService.findAll();
     }
 
     @GetMapping("/{id}")
     public Mono<DocumentType> getById(@PathVariable("id") ObjectId id){
-        return  repo.findById(id);
+        return  iDocumentTypeService.findById(id);
     }
 
     @PostMapping
-    public Mono<DocumentType> registrar(@RequestBody DocumentType afiliado){
-        return repo.save(afiliado);
+    public Mono<DocumentType> create(@RequestBody DocumentType afiliado){
+        return iDocumentTypeService.save(afiliado);
     }
 
     @PutMapping
-    public Mono<DocumentType> modificar(@RequestBody DocumentType afiliado){
-        return repo.update(afiliado);
+    public Mono<DocumentType> update(@RequestBody DocumentType afiliado){
+        return iDocumentTypeService.update(afiliado);
     }
 
     @DeleteMapping
-    public Mono<Void> eliminar(@PathVariable("id") ObjectId id){
-        return repo.deleteById(id);
+    public Mono<Void> deleteById(@PathVariable("id") ObjectId id){
+        return iDocumentTypeService.deleteById(id);
     }
 }

@@ -19,30 +19,30 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/tipoOperador")
 public class OperationTypeController {
     @Autowired
-    private IOperationTypeService repo;
+    private IOperationTypeService iOperationTypeService;
 
     @GetMapping
-    public Flux<OperationType> listar(){
-        return repo.findAll();
+    public Flux<OperationType> getAll(){
+        return iOperationTypeService.findAll();
     }
 
     @GetMapping("/{id}")
     public Mono<OperationType> getById(@PathVariable("id") ObjectId id){
-        return  repo.findById(id);
+        return  iOperationTypeService.findById(id);
     }
 
     @PostMapping
-    public Mono<OperationType> registrar(@RequestBody OperationType operationType){
-        return repo.save(operationType);
+    public Mono<OperationType> create(@RequestBody OperationType operationType){
+        return iOperationTypeService.save(operationType);
     }
 
     @PutMapping
-    public Mono<OperationType> modificar(@RequestBody OperationType operationType){
-        return repo.update(operationType);
+    public Mono<OperationType> update(@RequestBody OperationType operationType){
+        return iOperationTypeService.update(operationType);
     }
 
     @DeleteMapping
-    public Mono<Void> eliminar(@PathVariable("id") ObjectId id){
-        return repo.deleteById(id);
+    public Mono<Void> deleteById(@PathVariable("id") ObjectId id){
+        return iOperationTypeService.deleteById(id);
     }
 }
