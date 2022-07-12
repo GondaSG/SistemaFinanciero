@@ -1,7 +1,8 @@
 package com.bootcamp.sistemabancario.controller;
 
 import com.bootcamp.sistemabancario.domain.Account;
-import com.bootcamp.sistemabancario.repository.IAccountRepository;
+import com.bootcamp.sistemabancario.service.IAccountService;
+import org.bson.types.ObjectId;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,40 +13,40 @@ import reactor.core.publisher.Mono;
 import java.lang.invoke.MethodHandles;
 
 @RestController
-@RequestMapping("/v1")
+@RequestMapping("/account")
 public class AccountController {
 
     @Autowired
-    private IAccountRepository accountRepository;
+    private IAccountService accountService;
 
     private static final Logger LOGGER= LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
     @GetMapping
     public Flux<Account> findAll(){
         LOGGER.info("getAll" + "OK");
-        return accountRepository.findAll();
+        return accountService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Mono<Account> getById(@PathVariable("id") String id){
+    public Mono<Account> getById(@PathVariable("id") ObjectId id){
         LOGGER.info("getById" + "OK");
-        return accountRepository.findById(id);
+        return accountService.findById(id);
     }
 
     @PostMapping
     public Mono<Account> create(@RequestBody Account account){
         LOGGER.info("create" + "OK");
-        return accountRepository.save(account);
+        return accountService.save(account);
     }
 
     @PutMapping
     public Mono<Account> update(@RequestBody Account account){
         LOGGER.info("update" + "OK");
-        return accountRepository.update(account);
+        return accountService.update(account);
     }
     @DeleteMapping
-    public Mono<Void> deleteById(@PathVariable("id") String id){
+    public Mono<Void> deleteById(@PathVariable("id") ObjectId id){
         LOGGER.info("deleteById" + "OK");
-        return accountRepository.deleteById(id);
+        return accountService.deleteById(id);
     }
 
 }
