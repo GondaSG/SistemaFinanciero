@@ -1,29 +1,23 @@
 package com.bootcamp.sistemabancario.service;
+import com.bootcamp.sistemabancario.repository.ClientTypeRepository;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.bootcamp.sistemabancario.domain.DocumentType;
 import com.bootcamp.sistemabancario.domain.ClientType;
-import com.bootcamp.sistemabancario.repository.IOperationTypeRepository;
-
-import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
-@RequiredArgsConstructor
 public class ClientTypeService implements IClientTypeService {
-
     @Autowired
-    private final IClientTypeRepository clientTypeRepository;
-
+    private ClientTypeRepository clientTypeRepository;
     @Override
     public Flux<ClientType> findAll() {
         return clientTypeRepository.findAll();
     }
 
     @Override
-    public Mono<ClientType> findById(String id) {
+    public Mono<ClientType> findById(ObjectId id) {
         return clientTypeRepository.findById(id);
     }
 
@@ -33,15 +27,13 @@ public class ClientTypeService implements IClientTypeService {
     }
 
     @Override
-    public Mono<ClientType> update(ClientType operationType) {
-        return clientTypeRepository.save(operationType);
+    public Mono<ClientType> update(ClientType clientType) {
+        return clientTypeRepository.save(clientType);
     }
 
     @Override
-    public Mono<Void> deleteById(String id) {
-        // TODO Auto-generated method stub
+    public Mono<Void> deleteById(ObjectId id) {
         return clientTypeRepository.deleteById(id);
     }
-
 }
 
