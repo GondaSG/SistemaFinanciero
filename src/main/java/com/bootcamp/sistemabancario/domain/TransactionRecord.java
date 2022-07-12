@@ -12,12 +12,10 @@ import lombok.Data;
 public class TransactionRecord {
 	@Id
 	private ObjectId id;
+	private Account account;
+	private OperationType operationType;
 	private Double amount;
 	private Integer share;
 	private Date payDate;
-	private Client client;
-	private Product product;
-	private AccountType accountType;
-	private OperationType operationType;
-	private Representation representantion;
+
 }
