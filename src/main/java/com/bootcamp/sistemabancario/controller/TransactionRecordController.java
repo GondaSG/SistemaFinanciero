@@ -15,7 +15,7 @@ import java.lang.invoke.MethodHandles;
 
 @Slf4j
 @RestController
-@RequestMapping("/transaction")
+@RequestMapping("/transactionrecord")
 public class TransactionRecordController {
 
     private ITransactionRecordService transactionRecordService;
@@ -28,7 +28,7 @@ public class TransactionRecordController {
         return transactionRecordService.findAll();
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     public Mono<TransactionRecord> getById(@PathVariable("id") ObjectId id){
         LOGGER.info("getById" + "OK");
         return transactionRecordService.findById(id);

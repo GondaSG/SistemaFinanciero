@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
 @Data
-@Document("documentType")
+@Document("documenttype")
 public class DocumentType{
 	@Id
 	private ObjectId id;

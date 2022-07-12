@@ -18,7 +18,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/tipoDocumento")
+@RequestMapping("/documenttype")
 public class DocumentTypeController {
 
     @Autowired

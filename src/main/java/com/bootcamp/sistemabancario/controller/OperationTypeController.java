@@ -16,7 +16,7 @@ import com.bootcamp.sistemabancario.service.IOperationTypeService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 @RestController
-@RequestMapping("/tipoOperador")
+@RequestMapping("/operationtype")
 public class OperationTypeController {
     @Autowired
     private IOperationTypeService iOperationTypeService;

@@ -17,7 +17,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/producto")
+@RequestMapping("/product")
 public class ProductController {
     @Autowired
     private IProductService iProductService;

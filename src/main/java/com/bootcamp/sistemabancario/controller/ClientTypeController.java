@@ -15,7 +15,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/cliente")
+@RequestMapping("/clienttype")
 public class ClientTypeController {
 
     @Autowired
