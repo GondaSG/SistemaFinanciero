@@ -10,11 +10,11 @@ import reactor.core.publisher.Mono;
 public interface IProductService {
 	Flux<Product> findAll();
 	
-	Mono<Product> findById(String id);
+	Mono<Product> findById(ObjectId id);
 
     Mono<Product> save(Product product);
 
     Mono<Product> update(Product product);
     
-    public Mono<Void> deleteById(String id);
+    public Mono<Void> deleteById(ObjectId id);
 }

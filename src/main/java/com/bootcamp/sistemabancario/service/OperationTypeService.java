@@ -1,5 +1,6 @@
 package com.bootcamp.sistemabancario.service;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +25,7 @@ public class OperationTypeService implements IOperationTypeService {
 	}
 
 	@Override
-	public Mono<OperationType> findById(String id) { 
+	public Mono<OperationType> findById(ObjectId id) { 
 		return operationTypeRepository.findById(id);
 	}
 
@@ -39,8 +40,7 @@ public class OperationTypeService implements IOperationTypeService {
 	}
 
 	@Override
-	public Mono<Void> deleteById(String id) {
-		// TODO Auto-generated method stub
+	public Mono<Void> deleteById(ObjectId id) {
 		return operationTypeRepository.deleteById(id);
 	}
 
