@@ -9,6 +9,6 @@ import lombok.Data;
 @Document("operationtype")
 public class OperationType {
 	@Id
-	private ObjectId id;
+	private String id;
 	private String name;
 }

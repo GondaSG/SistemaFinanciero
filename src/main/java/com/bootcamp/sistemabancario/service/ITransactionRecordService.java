@@ -9,11 +9,11 @@ public interface ITransactionRecordService {
 
     Flux<TransactionRecord> findAll();
 
-    Mono<TransactionRecord> findById(ObjectId id);
+    Mono<TransactionRecord> findById(String id);
 
     Mono<TransactionRecord> save(TransactionRecord transactionRecord);
 
     Mono<TransactionRecord> update(TransactionRecord transactionRecord);
 
-    public Mono<Void> deleteById(ObjectId id);
+    public Mono<Void> deleteById(String id);
 }

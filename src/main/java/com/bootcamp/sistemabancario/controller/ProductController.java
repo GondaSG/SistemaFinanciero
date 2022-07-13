@@ -28,7 +28,7 @@ public class ProductController {
     }
 
     @GetMapping("/{id}")
-    public Mono<Product> getById(@PathVariable("id") ObjectId id){
+    public Mono<Product> getById(@PathVariable("id") String id){
         return  iProductService.findById(id);
     }
 
@@ -43,7 +43,7 @@ public class ProductController {
     }
 
     @DeleteMapping
-    public Mono<Void> deleteById(@PathVariable("id") ObjectId id){
+    public Mono<Void> deleteById(@PathVariable("id") String id){
         return iProductService.deleteById(id);
     }
 }

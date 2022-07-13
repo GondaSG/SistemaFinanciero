@@ -4,6 +4,6 @@ import com.bootcamp.sistemabancario.domain.TransactionRecord;
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
-public interface ITransactionRecordRepository extends ReactiveCrudRepository<TransactionRecord, ObjectId> {
+public interface ITransactionRecordRepository extends ReactiveCrudRepository<TransactionRecord, String> {
 
 }

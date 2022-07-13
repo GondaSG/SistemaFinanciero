@@ -8,6 +8,6 @@ import com.bootcamp.sistemabancario.domain.OperationType;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface IOperationTypeRepository extends ReactiveCrudRepository<OperationType,ObjectId>{
+public interface IOperationTypeRepository extends ReactiveCrudRepository<OperationType,String>{
 
 }

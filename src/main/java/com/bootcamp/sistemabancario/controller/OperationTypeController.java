@@ -27,7 +27,7 @@ public class OperationTypeController {
     }
 
     @GetMapping("/{id}")
-    public Mono<OperationType> getById(@PathVariable("id") ObjectId id){
+    public Mono<OperationType> getById(@PathVariable("id") String id){
         return  iOperationTypeService.findById(id);
     }
 
@@ -42,7 +42,7 @@ public class OperationTypeController {
     }
 
     @DeleteMapping
-    public Mono<Void> deleteById(@PathVariable("id") ObjectId id){
+    public Mono<Void> deleteById(@PathVariable("id") String id){
         return iOperationTypeService.deleteById(id);
     }
 }

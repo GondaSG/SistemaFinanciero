@@ -18,7 +18,7 @@ public class ClientService implements IClientService {
     }
 
     @Override
-    public Mono<Client> findById(ObjectId id) {
+    public Mono<Client> findById(String id) {
         return clientRepository.findById(id);
     }
 
@@ -33,7 +33,9 @@ public class ClientService implements IClientService {
     }
 
     @Override
-    public Mono<Void> deleteById(ObjectId id) {
+    public Mono<Void> deleteById(String id) {
         return clientRepository.deleteById(id);
     }
+
+    
 }

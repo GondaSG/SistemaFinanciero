@@ -28,7 +28,7 @@ public class AccountTypeController {
     }
 
     @GetMapping("/{id}")
-    public Mono<AccountType> getById(@PathVariable("id") ObjectId id){
+    public Mono<AccountType> getById(@PathVariable("id") String id){
         return  iAccountTypeService.findById(id);
     }
 
@@ -41,7 +41,7 @@ public class AccountTypeController {
     }
 
     @DeleteMapping
-    public Mono<Void> delete(@PathVariable("id") ObjectId id){
+    public Mono<Void> delete(@PathVariable("id") String id){
         return iAccountTypeService.deleteById(id);
     }
 }

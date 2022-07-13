@@ -9,7 +9,7 @@ import lombok.Data;
 @Document("representation")
 public class Representation {
 	@Id
-	private ObjectId id;
+	private String id;
 	private String name;
 	private String lastName;
 	private String documentNumber;

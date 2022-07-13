@@ -26,7 +26,7 @@ public class ClientTypeController {
     }
 
     @GetMapping("/{id}")
-    public Mono<ClientType> getById(@PathVariable("id") Integer id){return  clientTypeService.findById(id);
+    public Mono<ClientType> getById(@PathVariable("id") String id){return  clientTypeService.findById(id);
     }
 
     @PostMapping
@@ -40,7 +40,7 @@ public class ClientTypeController {
     }
 
     @DeleteMapping
-    public Mono<Void> delete(@PathVariable("id") Integer id){
+    public Mono<Void> delete(@PathVariable("id") String id){
         return clientTypeService.deleteById(id);
     }
 }

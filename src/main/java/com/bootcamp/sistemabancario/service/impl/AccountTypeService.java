@@ -18,7 +18,7 @@ public class AccountTypeService implements IAccountTypeService {
     }
 
     @Override
-    public Mono<AccountType> findById(ObjectId id) {
+    public Mono<AccountType> findById(String id) {
         return accountTypeRepository.findById(id);
     }
 
@@ -33,7 +33,7 @@ public class AccountTypeService implements IAccountTypeService {
     }
 
     @Override
-    public Mono<Void> deleteById(ObjectId id) {
+    public Mono<Void> deleteById(String id) {
         return accountTypeRepository.deleteById(id);
     }
 }

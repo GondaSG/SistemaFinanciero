@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document("account")
 public class Account{
     @Id
-    private ObjectId id;
+    private String id;
     private Client client;
     private AccountType accountType;
     private String nroCuenta;

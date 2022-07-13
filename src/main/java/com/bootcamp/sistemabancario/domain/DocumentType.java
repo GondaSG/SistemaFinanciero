@@ -10,7 +10,7 @@ import lombok.Data;
 @Document("documenttype")
 public class DocumentType{
 	@Id
-	private ObjectId id;
+	private String id;
 	private String name;
 	
 }

@@ -23,7 +23,7 @@ public class DocumentTypeService implements IDocumentTypeService {
 	}
 
 	@Override
-	public Mono<DocumentType> findById(ObjectId id) { 
+	public Mono<DocumentType> findById(String id) { 
 		return documentTypeRepository.findById(id);
 	}
 
@@ -38,7 +38,7 @@ public class DocumentTypeService implements IDocumentTypeService {
 	}
 
 	@Override
-	public Mono<Void> deleteById(ObjectId id) {
+	public Mono<Void> deleteById(String id) {
 		return documentTypeRepository.deleteById(id);
 	}
 

@@ -11,5 +11,5 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 
-public interface IProductRepository extends ReactiveCrudRepository<Product,ObjectId> {
+public interface IProductRepository extends ReactiveCrudRepository<Product,String> {
 }

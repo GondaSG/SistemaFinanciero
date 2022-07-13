@@ -20,7 +20,7 @@ public class RepresentationService implements IRepresentationService {
     public Flux<Representation> findAll() {return representationRepository.findAll();}
 
     @Override
-    public Mono<Representation> findById(ObjectId id) {return representationRepository.findById(id);}
+    public Mono<Representation> findById(String id) {return representationRepository.findById(id);}
 
     @Override
     public Mono<Representation> save(Representation representation) {return representationRepository.save(representation);}
@@ -29,5 +29,5 @@ public class RepresentationService implements IRepresentationService {
     public Mono<Representation> update(Representation representation) {return representationRepository.save(representation);}
 
     @Override
-    public Mono<Void> deleteById(ObjectId id) {return representationRepository.deleteById(id);}
+    public Mono<Void> deleteById(String id) {return representationRepository.deleteById(id);}
 }

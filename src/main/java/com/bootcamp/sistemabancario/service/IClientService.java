@@ -7,12 +7,11 @@ import reactor.core.publisher.Mono;
 public interface IClientService {
     Flux<Client> findAll();
 
-    Mono<Client> findById(ObjectId id);
+    Mono<Client> findById(String id);
 
     Mono<Client> save(Client client);
 
     Mono<Client> update(Client client);
 
-    Mono<Void> deleteById(ObjectId id);
-
+    Mono<Void> deleteById(String id);
 }

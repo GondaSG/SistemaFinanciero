@@ -28,7 +28,7 @@ public class TransactionRecordController {
     }
 
     @GetMapping("/{id}")
-    public Mono<TransactionRecord> getById(@PathVariable("id") ObjectId id){
+    public Mono<TransactionRecord> getById(@PathVariable("id") String id){
         LOGGER.info("getById" + "OK");
         return transactionRecordService.findById(id);
     }
@@ -45,7 +45,7 @@ public class TransactionRecordController {
     }
 
     @DeleteMapping
-    public Mono<Void> deleteById(@PathVariable("id")ObjectId id){
+    public Mono<Void> deleteById(@PathVariable("id") String id){
         LOGGER.info("deleteById" + "OK");
         return transactionRecordService.deleteById(id);
     }

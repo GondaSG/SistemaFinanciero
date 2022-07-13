@@ -11,7 +11,7 @@ import lombok.Data;
 @Document("transactionrecord")
 public class TransactionRecord {
 	@Id
-	private ObjectId id;
+	private String id;
 	private Account account;
 	private OperationType operationType;
 	private Double amount;

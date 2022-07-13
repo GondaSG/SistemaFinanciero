@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class Client {
 
 	@Id
-	private ObjectId id;
+	private String id;
 	private String name;
 	private String lastName;
 	private String documentNumber;

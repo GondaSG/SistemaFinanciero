@@ -4,5 +4,5 @@ import com.bootcamp.sistemabancario.domain.Client;
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
-public interface IClientRepository extends ReactiveCrudRepository<Client, ObjectId> {
+public interface IClientRepository extends ReactiveCrudRepository<Client, String> {
 }

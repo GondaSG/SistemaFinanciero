@@ -10,7 +10,7 @@ import lombok.Data;
 @Document("accountType")
 public class AccountType {
 	@Id
-	private ObjectId id;
+	private String id;
 	private String name;
 	private Double commission;
 	private Integer limit;

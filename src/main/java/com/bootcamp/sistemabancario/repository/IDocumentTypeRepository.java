@@ -10,5 +10,5 @@ import com.bootcamp.sistemabancario.domain.Product;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface IDocumentTypeRepository extends ReactiveCrudRepository<DocumentType,ObjectId> {
+public interface IDocumentTypeRepository extends ReactiveCrudRepository<DocumentType,String> {
 }

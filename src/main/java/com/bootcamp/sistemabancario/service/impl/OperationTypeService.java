@@ -26,7 +26,7 @@ public class OperationTypeService implements IOperationTypeService {
 	}
 
 	@Override
-	public Mono<OperationType> findById(ObjectId id) { 
+	public Mono<OperationType> findById(String id) { 
 		return operationTypeRepository.findById(id);
 	}
 
@@ -41,7 +41,7 @@ public class OperationTypeService implements IOperationTypeService {
 	}
 
 	@Override
-	public Mono<Void> deleteById(ObjectId id) {
+	public Mono<Void> deleteById(String id) {
 		return operationTypeRepository.deleteById(id);
 	}
 

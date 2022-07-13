@@ -14,11 +14,11 @@ public interface IDocumentTypeService {
 
 	Flux<DocumentType> findAll();
 	
-	Mono<DocumentType> findById(ObjectId id);
+	Mono<DocumentType> findById(String id);
 
     Mono<DocumentType> save(DocumentType documentType);
 
     Mono<DocumentType> update(DocumentType documentType);
     
-    public Mono<Void> deleteById(ObjectId id);
+    public Mono<Void> deleteById(String id);
 }

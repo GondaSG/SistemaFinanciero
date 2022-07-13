@@ -30,7 +30,7 @@ public class DocumentTypeController {
     }
 
     @GetMapping("/{id}")
-    public Mono<DocumentType> getById(@PathVariable("id") ObjectId id){
+    public Mono<DocumentType> getById(@PathVariable("id") String id){
         return  iDocumentTypeService.findById(id);
     }
 
@@ -45,7 +45,7 @@ public class DocumentTypeController {
     }
 
     @DeleteMapping
-    public Mono<Void> deleteById(@PathVariable("id") ObjectId id){
+    public Mono<Void> deleteById(@PathVariable("id") String id){
         return iDocumentTypeService.deleteById(id);
     }
 }

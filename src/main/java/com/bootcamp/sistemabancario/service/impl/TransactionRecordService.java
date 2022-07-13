@@ -20,7 +20,7 @@ public class TransactionRecordService implements ITransactionRecordService {
     public Flux<TransactionRecord> findAll() {return transactionRecordRepository.findAll();}
 
     @Override
-    public Mono<TransactionRecord> findById(ObjectId id) {return transactionRecordRepository.findById(id);}
+    public Mono<TransactionRecord> findById(String id) {return transactionRecordRepository.findById(id);}
 
     @Override
     public Mono<TransactionRecord> save(TransactionRecord transactionRecord) {return transactionRecordRepository.save(transactionRecord);
@@ -31,5 +31,5 @@ public class TransactionRecordService implements ITransactionRecordService {
     }
 
     @Override
-    public Mono<Void> deleteById(ObjectId id) {return transactionRecordRepository.deleteById(id);}
+    public Mono<Void> deleteById(String id) {return transactionRecordRepository.deleteById(id);}
 }

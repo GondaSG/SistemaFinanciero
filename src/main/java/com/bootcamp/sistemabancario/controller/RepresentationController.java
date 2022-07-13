@@ -29,7 +29,7 @@ public class RepresentationController {
    }
 
     @GetMapping("/{id}")
-    public Mono<Representation> getById(@PathVariable("id") ObjectId id){
+    public Mono<Representation> getById(@PathVariable("id") String id){
         LOGGER.info("getById" + "OK");
        return representationService.findById(id);
    }
@@ -47,7 +47,7 @@ public class RepresentationController {
    }
 
     @DeleteMapping
-    public Mono<Void> deleteById(@PathVariable("id") ObjectId id){
+    public Mono<Void> deleteById(@PathVariable("id") String id){
         LOGGER.info("deleteById" + "OK");
        return representationService.deleteById(id);
    }

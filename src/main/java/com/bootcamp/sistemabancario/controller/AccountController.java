@@ -27,7 +27,7 @@ public class AccountController {
     }
 
     @GetMapping("/{id}")
-    public Mono<Account> getById(@PathVariable("id") ObjectId id){
+    public Mono<Account> getById(@PathVariable("id") String id){
         LOGGER.info("getById" + "OK");
         return accountService.findById(id);
     }
@@ -44,7 +44,7 @@ public class AccountController {
         return accountService.update(account);
     }
     @DeleteMapping
-    public Mono<Void> deleteById(@PathVariable("id") ObjectId id){
+    public Mono<Void> deleteById(@PathVariable("id") String id){
         LOGGER.info("deleteById" + "OK");
         return accountService.deleteById(id);
     }

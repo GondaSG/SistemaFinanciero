@@ -10,11 +10,11 @@ public interface IRepresentationService {
 
     Flux<Representation> findAll();
 
-    Mono<Representation> findById(ObjectId id);
+    Mono<Representation> findById(String id);
 
     Mono<Representation> save(Representation representation);
 
     Mono<Representation> update(Representation representation);
 
-    public Mono<Void> deleteById(ObjectId id);
+    public Mono<Void> deleteById(String id);
 }

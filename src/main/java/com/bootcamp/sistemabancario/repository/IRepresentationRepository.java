@@ -7,6 +7,6 @@ import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public interface IRepresentationRepository extends ReactiveCrudRepository<Representation, ObjectId> {
+public interface IRepresentationRepository extends ReactiveCrudRepository<Representation, String> {
 
 }

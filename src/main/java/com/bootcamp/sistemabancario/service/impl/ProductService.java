@@ -27,7 +27,7 @@ public class ProductService implements IProductService {
 	}
 
 	@Override
-	public Mono<Product> findById(ObjectId id) { 
+	public Mono<Product> findById(String id) { 
 		return productRepository.findById(id);
 	}
 
@@ -42,7 +42,7 @@ public class ProductService implements IProductService {
 	}
 
 	@Override
-	public Mono<Void> deleteById(ObjectId id) {
+	public Mono<Void> deleteById(String id) {
 		return productRepository.deleteById(id);
 	}
 }

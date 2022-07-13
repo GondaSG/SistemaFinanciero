@@ -7,12 +7,12 @@ import reactor.core.publisher.Mono;
 public interface IClientTypeService {
     Flux<ClientType> findAll();
 
-    Mono<ClientType> findById(Integer id);
+    Mono<ClientType> findById(String id);
 
     Mono<ClientType> save(ClientType clientType);
 
     Mono<ClientType> update(ClientType clientType);
 
-    Mono<Void> deleteById(Integer id);
+    Mono<Void> deleteById(String id);
 
 }
