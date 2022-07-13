@@ -21,7 +21,7 @@ public class ClientTypeController {
     private ClientTypeService clientTypeService;
 
     @GetMapping
-    public Flux<ClientType> listar(){
+    public Flux<ClientType> findAll(){
         return clientTypeService.findAll();
     }
 
@@ -30,7 +30,7 @@ public class ClientTypeController {
     }
 
     @PostMapping
-    public Mono<ClientType> register(@RequestBody ClientType clientType){
+    public Mono<ClientType> create(@RequestBody ClientType clientType){
         return clientTypeService.save(clientType);
     }
 
@@ -40,7 +40,7 @@ public class ClientTypeController {
     }
 
     @DeleteMapping
-    public Mono<Void> delete(@PathVariable("id") String id){
+    public Mono<Void> deleteById(@PathVariable("id") Integer id){
         return clientTypeService.deleteById(id);
     }
 }

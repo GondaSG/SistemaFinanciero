@@ -23,7 +23,7 @@ public class ClientController {
 
 
     @GetMapping
-    public Flux<Client> findall(){
+    public Flux<Client> findAll(){
         return iClientService.findAll();
     }
 
@@ -33,7 +33,7 @@ public class ClientController {
     }
 
     @PostMapping
-    public Mono<Client> register(@RequestBody Client client){
+    public Mono<Client> create(@RequestBody Client client){
         return iClientService.save(client);
     }
 
@@ -43,7 +43,7 @@ public class ClientController {
     }
 
     @DeleteMapping
-    public Mono<Void> delete(@PathVariable("id") String id){
+    public Mono<Void> deleteById(@PathVariable("id") ObjectId id){
         return iClientService.deleteById(id);
     }
 }

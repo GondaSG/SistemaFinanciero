@@ -11,4 +11,8 @@ public class OperationType {
 	@Id
 	private String id;
 	private String name;
+	private Double comission;
+	private String limit;
+	private String code;
+	private Product product;
 }

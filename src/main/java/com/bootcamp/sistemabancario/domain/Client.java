@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Document("client")
-public class Client {
+public class Client{
 
 	@Id
 	private String id;
