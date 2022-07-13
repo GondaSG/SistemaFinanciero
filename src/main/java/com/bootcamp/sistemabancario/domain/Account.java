@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @Document("account")
-public class Account {
+public class Account{
     @Id
     private ObjectId id;
     private Client client;

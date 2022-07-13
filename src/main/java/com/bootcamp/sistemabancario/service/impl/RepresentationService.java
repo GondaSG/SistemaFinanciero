@@ -1,7 +1,8 @@
-package com.bootcamp.sistemabancario.service;
+package com.bootcamp.sistemabancario.service.impl;
 
 import com.bootcamp.sistemabancario.domain.Representation;
 import com.bootcamp.sistemabancario.repository.IRepresentationRepository;
+import com.bootcamp.sistemabancario.service.IRepresentationService;
 import lombok.RequiredArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import reactor.core.publisher.Mono;
 
 @Service
 @RequiredArgsConstructor
-public class RepresentationService implements IRepresentationService{
+public class RepresentationService implements IRepresentationService {
 
     @Autowired
     private final IRepresentationRepository representationRepository;

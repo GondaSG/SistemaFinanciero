@@ -1,7 +1,8 @@
-package com.bootcamp.sistemabancario.service;
+package com.bootcamp.sistemabancario.service.impl;
 
 import com.bootcamp.sistemabancario.domain.Account;
 import com.bootcamp.sistemabancario.repository.IAccountRepository;
+import com.bootcamp.sistemabancario.service.IAccountService;
 import lombok.RequiredArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +12,7 @@ import reactor.core.publisher.Mono;
 
 @Service
 @RequiredArgsConstructor
-public class AccountService implements IAccountService{
+public class AccountService implements IAccountService {
 
     @Autowired
     private final IAccountRepository accountRepository;

@@ -1,6 +1,6 @@
-package com.bootcamp.sistemabancario.service;
-import com.bootcamp.sistemabancario.repository.ClientTypeRepository;
-import org.bson.types.ObjectId;
+package com.bootcamp.sistemabancario.service.impl;
+import com.bootcamp.sistemabancario.repository.IClientTypeRepository;
+import com.bootcamp.sistemabancario.service.IClientTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.bootcamp.sistemabancario.domain.ClientType;
@@ -10,14 +10,14 @@ import reactor.core.publisher.Mono;
 @Service
 public class ClientTypeService implements IClientTypeService {
     @Autowired
-    private ClientTypeRepository clientTypeRepository;
+    private IClientTypeRepository clientTypeRepository;
     @Override
     public Flux<ClientType> findAll() {
         return clientTypeRepository.findAll();
     }
 
     @Override
-    public Mono<ClientType> findById(ObjectId id) {
+    public Mono<ClientType> findById(Integer id) {
         return clientTypeRepository.findById(id);
     }
 
@@ -32,7 +32,7 @@ public class ClientTypeService implements IClientTypeService {
     }
 
     @Override
-    public Mono<Void> deleteById(ObjectId id) {
+    public Mono<Void> deleteById(Integer id) {
         return clientTypeRepository.deleteById(id);
     }
 }

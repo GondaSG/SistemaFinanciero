@@ -1,6 +1,7 @@
-package com.bootcamp.sistemabancario.service;
+package com.bootcamp.sistemabancario.service.impl;
 import com.bootcamp.sistemabancario.domain.Client;
-import com.bootcamp.sistemabancario.repository.ClientRepository;
+import com.bootcamp.sistemabancario.repository.IClientRepository;
+import com.bootcamp.sistemabancario.service.IClientService;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,7 +11,7 @@ import reactor.core.publisher.Mono;
 public class ClientService implements IClientService {
 
     @Autowired
-    private ClientRepository clientRepository;
+    private IClientRepository clientRepository;
     @Override
     public Flux<Client> findAll() {
         return clientRepository.findAll();

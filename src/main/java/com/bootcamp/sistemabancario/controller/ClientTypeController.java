@@ -1,6 +1,5 @@
 package com.bootcamp.sistemabancario.controller;
-import com.bootcamp.sistemabancario.service.ClientTypeService;
-import org.bson.types.ObjectId;
+import com.bootcamp.sistemabancario.service.impl.ClientTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +26,7 @@ public class ClientTypeController {
     }
 
     @GetMapping("/{id}")
-    public Mono<ClientType> getById(@PathVariable("id") ObjectId id){return  clientTypeService.findById(id);
+    public Mono<ClientType> getById(@PathVariable("id") Integer id){return  clientTypeService.findById(id);
     }
 
     @PostMapping
@@ -41,7 +40,7 @@ public class ClientTypeController {
     }
 
     @DeleteMapping
-    public Mono<Void> delete(@PathVariable("id") ObjectId id){
+    public Mono<Void> delete(@PathVariable("id") Integer id){
         return clientTypeService.deleteById(id);
     }
 }

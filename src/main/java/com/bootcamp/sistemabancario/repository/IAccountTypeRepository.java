@@ -1,8 +1,8 @@
 package com.bootcamp.sistemabancario.repository;
+
+import com.bootcamp.sistemabancario.domain.AccountType;
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
-import com.bootcamp.sistemabancario.domain.Client;
 
-public interface ClientRepository extends ReactiveCrudRepository<Client,ObjectId> {
-
+public interface IAccountTypeRepository extends ReactiveCrudRepository<AccountType, ObjectId> {
 }

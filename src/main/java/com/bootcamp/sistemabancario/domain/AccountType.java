@@ -12,4 +12,7 @@ public class AccountType {
 	@Id
 	private ObjectId id;
 	private String name;
+	private Double commission;
+	private Integer limit;
+	private String code;
 }

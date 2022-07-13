@@ -1,5 +1,6 @@
-package com.bootcamp.sistemabancario.service;
+package com.bootcamp.sistemabancario.service.impl;
 
+import com.bootcamp.sistemabancario.service.IDocumentTypeService;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import reactor.core.publisher.Mono;
 
 @Service
 @RequiredArgsConstructor
-public class DocumentTypeService implements IDocumentTypeService{
+public class DocumentTypeService implements IDocumentTypeService {
 	@Autowired
 	private final IDocumentTypeRepository documentTypeRepository;
 	@Override

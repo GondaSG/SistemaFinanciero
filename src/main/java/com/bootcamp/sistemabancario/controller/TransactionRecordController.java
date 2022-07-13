@@ -1,7 +1,6 @@
 package com.bootcamp.sistemabancario.controller;
 
 import com.bootcamp.sistemabancario.domain.TransactionRecord;
-import com.bootcamp.sistemabancario.repository.ITransactionRecordRepository;
 import com.bootcamp.sistemabancario.service.ITransactionRecordService;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.types.ObjectId;
