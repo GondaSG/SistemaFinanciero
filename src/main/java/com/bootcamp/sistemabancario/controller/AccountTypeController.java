@@ -33,7 +33,7 @@ public class AccountTypeController {
     }
 
     @PostMapping
-    public Mono<AccountType> register(@RequestBody AccountType accountType){return iAccountTypeService.save(accountType);
+    public Mono<AccountType> create(@RequestBody AccountType accountType){return iAccountTypeService.save(accountType);
     }
 
     @PutMapping
