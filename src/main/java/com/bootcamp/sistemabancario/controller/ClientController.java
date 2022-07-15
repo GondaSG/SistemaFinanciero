@@ -43,7 +43,7 @@ public class ClientController {
     }
 
     @DeleteMapping
-    public Mono<Void> deleteById(@PathVariable("id") ObjectId id){
+    public Mono<Void> deleteById(@PathVariable("id") String id){
         return iClientService.deleteById(id);
     }
 }

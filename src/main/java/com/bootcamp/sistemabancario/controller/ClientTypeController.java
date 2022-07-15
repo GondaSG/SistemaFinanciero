@@ -40,7 +40,7 @@ public class ClientTypeController {
     }
 
     @DeleteMapping
-    public Mono<Void> deleteById(@PathVariable("id") Integer id){
+    public Mono<Void> deleteById(@PathVariable("id") String id){
         return clientTypeService.deleteById(id);
     }
 }
