@@ -1,6 +1,7 @@
 package com.bootcamp.sistemabancario.service.impl;
 
 import com.bootcamp.sistemabancario.domain.Account;
+import com.bootcamp.sistemabancario.domain.Client;
 import com.bootcamp.sistemabancario.repository.IAccountRepository;
 import com.bootcamp.sistemabancario.repository.IClientRepository;
 import com.bootcamp.sistemabancario.service.IAccountService;
@@ -21,6 +22,8 @@ public class AccountService implements IAccountService {
     private final IAccountRepository accountRepository;
     @Autowired
     private final IClientRepository iClientRepository;
+    @Autowired
+    private final ClientService clienteService;
     @Override
     public Flux<Account> findAll() {return accountRepository.findAll();}
 
@@ -29,12 +32,16 @@ public class AccountService implements IAccountService {
 
     @Override
     public Mono<Account> save(Account account) {
+    	/*Mono<Client> client = iClientRepository.findById(account.getClient().getId());
+    	accountRepository.findAll().filter(x-> x.getClient().getId().equals(account.getClient().getId()))
+    								.flatMap(_account -> 
+    									clienteService.validateClientType(client.map(x->x.getName()))
+    										);*/
     	/*iClientRepository
-    	.findById(account.getClient().getId().get())
-    	.(client -> {
-    		Mono<IClienteValidatorService> iClientValidator = new PersonService();
-    		return accountRepository.findById(cliente.getClientType().getId().get());
-    	});
+    	.findById(account.getClient().getId())
+    	.map(client -> clienteService.validateClientType(client.getName()).map(clientValidator ->
+    	          clientValidator.Validator(findAll(x-> x.getClient().getId().equals(account.getClient().getId())))))
+    	.mapflat(accunt_ -> clientValidator.Validator(findAll(x-> x.getClient().getId().equals(account.getClient().getId()))));
     	.flatMap(x -> {
     		Flux<IClientValidator> iClientValidator = Mono.just(x.getClientType().getId().get()) ->{
     			return 

@@ -2,6 +2,8 @@ package com.bootcamp.sistemabancario.service.impl;
 import com.bootcamp.sistemabancario.domain.Client;
 import com.bootcamp.sistemabancario.repository.IClientRepository;
 import com.bootcamp.sistemabancario.service.IClientService;
+import com.bootcamp.sistemabancario.service.IClienteValidatorService;
+
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,5 +39,11 @@ public class ClientService implements IClientService {
         return clientRepository.deleteById(id);
     }
 
-    
+    public Mono<IClienteValidatorService> validateClientType(String name){
+    	if( name == "Persona")
+    		return Mono.just(new PersonService());
+    	else 
+    		return Mono.just(new EnterpriseService());
+    		
+    }
 }

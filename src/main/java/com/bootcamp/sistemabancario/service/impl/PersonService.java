@@ -9,7 +9,7 @@ import reactor.core.publisher.Mono;
 public class PersonService implements IClienteValidatorService{
 
 	@Override
-	public Mono<Boolean> Validator(Flux<Account> accounts) {
+	public Mono<Account> Validator(Mono<Account> accounts) {
 		// TODO Auto-generated method stub
 		return null;
 	}

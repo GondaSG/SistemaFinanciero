@@ -1,5 +1,5 @@
 package com.bootcamp.sistemabancario.controller;
-import com.bootcamp.sistemabancario.service.impl.ClientTypeService;
+import com.bootcamp.sistemabancario.service.IClientTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +18,7 @@ import reactor.core.publisher.Mono;
 public class ClientTypeController {
 
     @Autowired
-    private ClientTypeService clientTypeService;
+    private IClientTypeService clientTypeService;
 
     @GetMapping
     public Flux<ClientType> findAll(){
@@ -40,7 +40,7 @@ public class ClientTypeController {
     }
 
     @DeleteMapping
-    public Mono<Void> deleteById(@PathVariable("id") Integer id){
+    public Mono<Void> deleteById(@PathVariable("id") String id){
         return clientTypeService.deleteById(id);
     }
 }
