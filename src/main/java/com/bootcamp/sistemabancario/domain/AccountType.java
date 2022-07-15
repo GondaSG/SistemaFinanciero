@@ -15,4 +15,5 @@ public class AccountType {
 	private Double commission;
 	private Integer limit;
 	private String code;
+	private Product product;
 }

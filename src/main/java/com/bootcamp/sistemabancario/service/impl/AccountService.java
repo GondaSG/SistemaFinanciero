@@ -5,10 +5,9 @@ import com.bootcamp.sistemabancario.domain.Client;
 import com.bootcamp.sistemabancario.repository.IAccountRepository;
 import com.bootcamp.sistemabancario.repository.IClientRepository;
 import com.bootcamp.sistemabancario.service.IAccountService;
-import com.bootcamp.sistemabancario.service.IClienteValidatorService;
-
 import lombok.RequiredArgsConstructor;
 import org.bson.types.ObjectId;
+import org.reactivestreams.Publisher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -37,6 +36,7 @@ public class AccountService implements IAccountService {
     								.flatMap(_account -> 
     									clienteService.validateClientType(client.map(x->x.getName()))
     										);*/
+
     	/*iClientRepository
     	.findById(account.getClient().getId())
     	.map(client -> clienteService.validateClientType(client.getName()).map(clientValidator ->
@@ -46,7 +46,7 @@ public class AccountService implements IAccountService {
     		Flux<IClientValidator> iClientValidator = Mono.just(x.getClientType().getId().get()) ->{
     			return 
     		}
-    				})*/
+    	})*/
     	//obtener cliente
     	//
     	//obtener cuentas del cliente existentes

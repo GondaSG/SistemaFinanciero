@@ -35,6 +35,10 @@ public class TransactionRecordController {
 
     @PostMapping
     public Mono<TransactionRecord> create(@RequestBody TransactionRecord transactionRecord){
+
+
+
+
         LOGGER.info("create" + "OK");
         return transactionRecordService.save(transactionRecord);
     }
